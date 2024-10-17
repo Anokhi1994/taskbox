@@ -1,15 +1,26 @@
 /** @type { import('@storybook/react-vite').StorybookConfig } */
 const config = {
-  stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
-  staticDirs: ["../public"],
-  addons: [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "@storybook/addon-interactions",
-  ],
+  // Story location based on your example
+  stories: ['../src/components/**/*.stories.@(js|jsx)'],
+
+  // Serve static files from the public directory
+  staticDirs: ['../public'],
+
+  addons: [// Enable linking between stories
+  '@storybook/addon-links', // Includes controls, actions, docs, and more
+  '@storybook/addon-essentials', // Adds support for interaction testing
+  '@storybook/addon-interactions', '@chromatic-com/storybook'],
+
   framework: {
-    name: "@storybook/react-vite",
+    name: '@storybook/react-vite',
     options: {},
   },
+
+  docs: {},
+
+  typescript: {
+    reactDocgen: 'react-docgen-typescript'
+  }
 };
+
 export default config;
