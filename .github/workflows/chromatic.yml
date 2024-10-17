@@ -15,6 +15,10 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Check Chromatic Project Token
+        run: echo "CHROMATIC_PROJECT_TOKEN=${{ secrets.CHROMATIC_PROJECT_TOKEN }}"
+
+
       - name: Remove `node_modules` and `package-lock.json`
         run: |
           rm -rf node_modules
